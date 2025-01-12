@@ -1,0 +1,26 @@
+{
+    "Name": "Wrapping Area",
+    "Author": "Aba gamer, Bavario",
+    "Description": "An area with a Wrap-Around effect that teleports the player to the other side of the area when he leaves it.",
+    "InstallDependencies": ["Syati_ObjectFactories", "ExtAreaObjMgr"],
+    "ModuleData" : [
+      {
+        "NameObjFactory" : [
+          {
+            "Name" : "WrappingArea",
+            "Function" : "createExtActor<WrappingArea>",
+            "Include" : "WrappingArea.h"
+          }
+        ]      
+      },
+      {
+        "AreaObjMgr" : [
+          {
+            "Name" : "WrappingArea",
+            "MaxCount" : "64",
+            "Function" : "AreaObjContainer::createManager<AreaObjMgr>"
+          }
+        ]
+      }
+    ]
+  }
