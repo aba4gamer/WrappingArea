@@ -8,5 +8,3 @@ An area that warps you to the opposite side from which you left the area. Works 
 (If you left the three Obj_args at -1 you'll use the three axis)
 
 You can use SW_A to turn off the area.
-
-Now only works as a Cube but Sphere support it'll be added soon.
