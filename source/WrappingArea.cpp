@@ -22,9 +22,13 @@ void WrappingArea::init(const JMapInfoIter &rIter)
 void WrappingArea::calcWarpPositions () {
     mPositions = WrappingAreaPositions();
     mPositions.rightX = mCenterPos.x + 500 * mAreaScale.x,
-    mPositions.leftX = mCenterPos.x - 500 * mAreaScale.x,
-    mPositions.topY = mCenterPos.y + 1000 * mAreaScale.y, // This works different because the shape is not CubeCentered
-    mPositions.bottomY = mCenterPos.y,
+    mPositions.leftX = mCenterPos.x - 500 * mAreaScale.x;
+    if (mAreaFormType == AreaForm_CenteredCube)
+        mPositions.topY = mCenterPos.y + 500 * mAreaScale.y,
+        mPositions.bottomY = mCenterPos.y - 500 * mAreaScale.y;
+    else
+        mPositions.topY = mCenterPos.y + 1000 * mAreaScale.y,
+        mPositions.bottomY = mCenterPos.y;
     mPositions.frontZ = mCenterPos.z + 500 * mAreaScale.z,
     mPositions.backZ = mCenterPos.z - 500 * mAreaScale.z;
     if (!mWarpX && !mWarpY && !mWarpZ)
